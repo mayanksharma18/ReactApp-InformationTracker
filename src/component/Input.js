@@ -2,6 +2,8 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import List from './ListItems'
+import Icon from '@material-ui/core/Icon';
+import red from '@material-ui/core/colors/red';
 
 export default class InputText extends React.Component{
         state={
@@ -30,7 +32,7 @@ export default class InputText extends React.Component{
     }
        render(){
            return(
-               <div>
+               <div position="relative">
             <form onSubmit={this.handleSubmit}>
         <TextField
         value={this.state.input}
@@ -43,13 +45,16 @@ export default class InputText extends React.Component{
           variant="outlined"
         />
         <Button  type="submit" variant="contained" color="secondary" >
-        Add you lessons
+       
+        <Icon fontSize="large" >
+        add_circle
+      </Icon> Add you lessons
       </Button>
+      
      
         </form>
  <h1>{this.state.input}</h1>
  
-
  <List items={this.state.data}/>
  </div>
 
