@@ -12,8 +12,9 @@ export default class App extends React.Component{
           return(
               <div>
          <Heading />
+         
          <InputText/>
-          
+         
          </div>
 
           )
