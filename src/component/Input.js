@@ -7,8 +7,9 @@ import red from '@material-ui/core/colors/red';
 
 export default class InputText extends React.Component {
     state = {
+        id:0,
         input: "",
-
+ 
         data: []
 
     }
@@ -21,16 +22,15 @@ export default class InputText extends React.Component {
         event.preventDefault();
 
         let input = this.state.input;
-
+        let id=this.state.id+1
         let time = new Date().toDateString() + " " + new Date().toLocaleTimeString();
         console.log("Hi")
         this.setState({
             input: "",
 
-            data: [...this.state.data, { input, time }]
+            data: [...this.state.data, { id,input, time }]
         })
-        localStorage.setItem("data",toString(this.state.data))
-    
+        
     }
     render() {
         return (

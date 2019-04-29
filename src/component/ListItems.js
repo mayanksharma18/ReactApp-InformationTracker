@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Paper, Grid, Avatar, Icon, GridList, GridListTile } from '@material-ui/core';
+
 function List(props) {
     let items = props.items
     return (
@@ -11,8 +12,8 @@ function List(props) {
             {
 
                 items.map((i) => 
-                <li><div>
-                    <Card>
+                <li key={i.id} >
+                    <Card className="card">
                         <CardContent>
                             <Typography color="textSecondary" gutterBottom>
                                 {i.time}
@@ -23,7 +24,7 @@ function List(props) {
 
                         </CardContent>
                     </Card>
-                </div></li>)
+                </li>)
             }
             </ol>
   
